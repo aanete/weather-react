@@ -4,10 +4,11 @@ import "./Search.css";
 
 export default function Search() {
 	let [city, setCity] = useState("");
-
+	let [loaded, setLoaded] = useState(false);
 	let [weather, setWeather] = useState(null);
 
 	function showWeather(response) {
+		setLoaded(true);
 		setWeather({
 			temperature: response.data.main.temp,
 			humidity: response.data.main.humidity,
@@ -40,19 +41,23 @@ export default function Search() {
 		</form>
 	);
 
-	return (
-		<div>
-			{form}
-			<ul>
-				<li className="currentCity">{city}</li>
-				<li>Temperature: {Math.round(weather.temperature)}°C</li>
-				<li>Humidity: {weather.humidity}%</li>
-				<li>Wind: {Math.round(weather.wind)} m/s</li>
-				<li>Description: {weather.description}</li>
-				<li>
-					<img src={weather.icon} alt="weather icon" />
-				</li>
-			</ul>
-		</div>
-	);
+	if (loaded) {
+		return (
+			<div>
+				{form}
+				<ul>
+					<li className="currentCity">{city}</li>
+					<li>Temperature: {Math.round(weather.temperature)}°C</li>
+					<li>Humidity: {weather.humidity}%</li>
+					<li>Wind: {Math.round(weather.wind)} m/s</li>
+					<li>Description: {weather.description}</li>
+					<li>
+						<img src={weather.icon} alt="weather icon" />
+					</li>
+				</ul>
+			</div>
+		);
+	} else {
+		return form;
+	}
 }
