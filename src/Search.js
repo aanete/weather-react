@@ -43,7 +43,7 @@ export default function Search() {
 
 	if (loaded) {
 		return (
-			<div>
+			<div className="container">
 				{form}
 				<ul>
 					<li className="currentCity">{city}</li>

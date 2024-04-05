@@ -33,15 +33,15 @@ input {
 	border: none;
 	font-size: 15px;
 }
-#cityName {
+.cityName {
 	width: 70%;
 }
 
-#button {
+.search-button {
 	background-color: rgb(101, 146, 191);
 }
 
-#button:hover {
+.search-button:hover {
 	background-color: #4874a0;
 	transition: 200ms, ease-in-out;
 	cursor: pointer;
@@ -57,7 +57,7 @@ input {
 	color: #34618f;
 }
 
-.current-city {
+.currentCity {
 	font-size: 30px;
 	font-weight: bold;
 }
@@ -92,4 +92,10 @@ footer {
 	text-align: center;
 	font-size: 14px;
 	line-height: 5px;
+}
+
+li {
+	color: #25272f;
+	list-style: none;
+	text-align: left;
 }
