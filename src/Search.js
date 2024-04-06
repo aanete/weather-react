@@ -67,8 +67,8 @@ export default function Search() {
 					and hosted on{" "}
 					<a href="https://www.netlify.com/" target="_blank">
 						Netlify
-					</a>
-					.
+					</a>{" "}
+					https://learntheweather.netlify.app/.
 				</footer>
 			</div>
 		);
